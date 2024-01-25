@@ -60,10 +60,37 @@ const AttendeeDashboard: React.FC = () => {
 }
 
 const OrganizerDashboard: React.FC = () => {
+  const router = useRouter()
+
+  const handleRouteChange = (path: string) => {
+    router.push(path)
+  }
+
+  const handleLogout = () => {
+    // Implement logout logic here
+    console.log('Organizer logged out')
+    // Redirect to login or home page after logout
+  }
+
   return (
     <div>
       <p>This is the dashboard for convention organizers.</p>
       {/* Additional content for convention organizers */}
+      <button
+        onClick={() => handleRouteChange('/generate-code')}
+        className="btn"
+      >
+        Generate QR Code
+      </button>
+      <button
+        onClick={() => handleRouteChange('/generate-survey')}
+        className="btn"
+      >
+        Generate Survey
+      </button>
+      <button onClick={handleLogout} className="btn">
+        Log Out
+      </button>
     </div>
   )
 }
@@ -74,7 +101,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const user: UserData = {
     id: '1',
     username: 'User',
-    userType: 'attendee', // or 'organizer', based on authentication
+    userType: 'organizer', // or 'organizer', based on authentication
   }
 
   return {
