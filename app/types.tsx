@@ -24,3 +24,30 @@ export interface SurveyQuestion {
   question: string
   options: string[]
 }
+
+export interface CustomizationOption {
+  label: string
+  imageURL: string
+}
+
+export interface AvatarCustomizationOptions {
+  hair: CustomizationOption[]
+  skinColor: CustomizationOption[]
+  eyeShape: CustomizationOption[]
+  eyeColor: CustomizationOption[]
+  upperBody: CustomizationOption[]
+  lowerBody: CustomizationOption[]
+  shoes: CustomizationOption[]
+  weapon: CustomizationOption[]
+}
+
+export interface CurrentlySelectedAvatarOptions {
+  hair: CustomizationOption
+  skinColor: CustomizationOption
+  eyeShape: CustomizationOption
+  eyeColor: CustomizationOption
+  upperBody: CustomizationOption
+  lowerBody: CustomizationOption
+  shoes: CustomizationOption
+  weapon: CustomizationOption
+}
