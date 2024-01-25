@@ -1,7 +1,9 @@
 // pages/dashboard.tsx
 import React from 'react'
 import { GetServerSideProps } from 'next'
+import Image from 'next/image'
 import { UserData, DashboardProps } from '../app/types'
+import { useRouter } from 'next/router'
 
 const DashboardPage: React.FC<DashboardProps> = ({ user }) => {
   return (
@@ -23,10 +25,36 @@ const DashboardPage: React.FC<DashboardProps> = ({ user }) => {
 }
 
 const AttendeeDashboard: React.FC = () => {
+  const router = useRouter()
+
+  const handleRouteChange = (path: string) => {
+    router.push(path)
+  }
+
+  const handleLogout = () => {
+    // Implement logout logic here
+    console.log('User logged out')
+    // Redirect to login or home page after logout
+  }
+
   return (
     <div>
       <p>This is the dashboard for convention attendees.</p>
+      {/* Placeholder for attendee's avatar */}
+      Avatar goes here
       {/* Additional content for convention attendees */}
+      <button onClick={() => handleRouteChange('/scan')} className="btn">
+        Go to QR Scanner
+      </button>
+      <button onClick={() => handleRouteChange('/survey')} className="btn">
+        Go to Survey
+      </button>
+      <button onClick={() => handleRouteChange('/avatar')} className="btn">
+        Customize Avatar
+      </button>
+      <button onClick={handleLogout} className="btn">
+        Log Out
+      </button>
     </div>
   )
 }
