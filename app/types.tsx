@@ -8,3 +8,14 @@ export interface UserCredentials {
 export interface LoginSignupProps {
   // Define any props here, if needed
 }
+
+export interface UserData {
+  id: string
+  username: string
+  userType: 'goer' | 'organizer'
+  // Additional user-specific data
+}
+
+export interface DashboardProps {
+  user: UserData
+}
