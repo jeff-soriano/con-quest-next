@@ -11,8 +11,8 @@ const DashboardPage: React.FC<DashboardProps> = ({ user }) => {
           Welcome, {user.username}!
         </h1>
         <div className="bg-white p-6 rounded-lg shadow-lg">
-          {user.userType === 'goer' ? (
-            <GoerDashboard />
+          {user.userType === 'attendee' ? (
+            <AttendeeDashboard />
           ) : (
             <OrganizerDashboard />
           )}
@@ -22,11 +22,11 @@ const DashboardPage: React.FC<DashboardProps> = ({ user }) => {
   )
 }
 
-const GoerDashboard: React.FC = () => {
+const AttendeeDashboard: React.FC = () => {
   return (
     <div>
-      <p>This is the dashboard for convention goers.</p>
-      {/* Additional content for convention goers */}
+      <p>This is the dashboard for convention attendees.</p>
+      {/* Additional content for convention attendees */}
     </div>
   )
 }
@@ -46,7 +46,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const user: UserData = {
     id: '1',
     username: 'User',
-    userType: 'goer', // or 'organizer', based on authentication
+    userType: 'attendee', // or 'organizer', based on authentication
   }
 
   return {

@@ -2,7 +2,7 @@
 export interface UserCredentials {
   username: string
   password: string
-  userType: 'goer' | 'organizer'
+  userType: 'attendee' | 'organizer'
 }
 
 export interface LoginSignupProps {
@@ -12,7 +12,7 @@ export interface LoginSignupProps {
 export interface UserData {
   id: string
   username: string
-  userType: 'goer' | 'organizer'
+  userType: 'attendee' | 'organizer'
   // Additional user-specific data
 }
 

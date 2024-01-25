@@ -8,7 +8,7 @@ const LoginSignupPage: React.FC = () => {
   const [credentials, setCredentials] = useState<UserCredentials>({
     username: '',
     password: '',
-    userType: 'goer',
+    userType: 'attendee',
   })
   const [error, setError] = useState<string>('')
 
@@ -104,7 +104,7 @@ const LoginSignupPage: React.FC = () => {
               value={credentials.userType}
               onChange={handleChange}
             >
-              <option value="goer">Convention Goer</option>
+              <option value="attendee">Convention Attendee</option>
               <option value="organizer">Convention Organizer</option>
             </select>
           </div>
