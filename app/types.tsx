@@ -19,3 +19,8 @@ export interface UserData {
 export interface DashboardProps {
   user: UserData
 }
+
+export interface SurveyQuestion {
+  question: string
+  options: string[]
+}

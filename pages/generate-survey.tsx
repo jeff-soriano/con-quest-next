@@ -1,10 +1,6 @@
 // components/SurveyGenerator.tsx
 import React, { useState } from 'react'
-
-interface SurveyQuestion {
-  question: string
-  options: string[]
-}
+import { SurveyQuestion } from '../app/types'
 
 const SurveyGenerator: React.FC = () => {
   const [surveyQuestions, setSurveyQuestions] = useState<SurveyQuestion[]>([
